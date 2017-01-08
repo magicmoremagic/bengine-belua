@@ -1,15 +1,6 @@
-module { name = 'luacore',
-   projects = {
-      lib {
-         src = {
-            'src/*.cpp'
-         },
-         preprocessor = {
-            'BE_LUACORE_IMPL'
-         },
-         libs = {
-            'luaxx'
-         }
-      }
+module 'luacore' {
+   lib {
+      define 'BE_LUACORE_IMPL',
+      link_project 'luaxx'
    }
 }
