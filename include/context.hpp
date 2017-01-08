@@ -39,8 +39,6 @@ public:
    lua_State* L;
 };
 
-void ecall(lua_State* L, int n_args, int n_results);
-
 } // be::lua::detail
 
 class Context final {

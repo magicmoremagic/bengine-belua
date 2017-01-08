@@ -4,5 +4,6 @@
 
 #include "id.hpp"
 #include "logging.hpp"
+#include "interpolate_string.hpp"
 
 #endif

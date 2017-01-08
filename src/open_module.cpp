@@ -1,5 +1,6 @@
 #include "open_module.hpp"
 #include "context.hpp"
+#include "lua_helpers.hpp"
 
 namespace be {
 namespace lua {
@@ -76,7 +77,7 @@ void open_module(lua_State* L, const luaL_Reg& module) {
 void open_module(lua_State* L, const char* module_name, lua_CFunction module_opener) {
    if (module_name == nullptr) {
       lua_pushcfunction(L, module_opener);
-      detail::ecall(L, 0, 0);
+      ecall(L, 0, 0);
    } else {
       lua_pushvalue(L, LUA_REGISTRYINDEX);
       lua_rawgeti(L, -1, LUA_RIDX_GLOBALS);
@@ -90,7 +91,7 @@ void open_module(lua_State* L, const char* module_name, lua_CFunction module_ope
          lua_pop(L, 1);  /* remove field */
          lua_pushcfunction(L, module_opener);
          lua_pushstring(L, module_name);  /* argument to open function */
-         detail::ecall(L, 1, 1);  /* call 'openf' to open module */
+         ecall(L, 1, 1);  /* call 'openf' to open module */
          lua_pushvalue(L, -1);  /* make copy of module (call result) */
          lua_setfield(L, -3, module_name);  /* _LOADED[modname] = module */
       }

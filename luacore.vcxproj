@@ -53,7 +53,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\context.hpp" />
+    <ClInclude Include="include\lua_helpers.hpp" />
     <ClInclude Include="include\id.hpp" />
+    <ClInclude Include="include\interpolate_string.hpp" />
     <ClInclude Include="include\logging.hpp" />
     <ClInclude Include="include\luacore_autolink.hpp" />
     <ClInclude Include="include\lua_exception.hpp" />
@@ -63,8 +65,10 @@
   <ItemGroup>
     <ClCompile Include="src\context.cpp" />
     <ClCompile Include="src\id.cpp" />
+    <ClCompile Include="src\interpolate_string.cpp" />
     <ClCompile Include="src\logging.cpp" />
     <ClCompile Include="src\lua_exception.cpp" />
+    <ClCompile Include="src\lua_helpers.cpp" />
     <ClCompile Include="src\open_module.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
