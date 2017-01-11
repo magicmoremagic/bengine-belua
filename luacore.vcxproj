@@ -61,6 +61,7 @@
     <ClInclude Include="include\lua_exception.hpp" />
     <ClInclude Include="include\modules.hpp" />
     <ClInclude Include="include\open_module.hpp" />
+    <ClInclude Include="include\time.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\context.cpp" />
@@ -70,6 +71,7 @@
     <ClCompile Include="src\lua_exception.cpp" />
     <ClCompile Include="src\lua_helpers.cpp" />
     <ClCompile Include="src\open_module.cpp" />
+    <ClCompile Include="src\time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
