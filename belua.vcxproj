@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>luacore</ProjectName>
-    <RootNamespace>luacore</RootNamespace>
+    <ProjectName>belua</ProjectName>
+    <RootNamespace>belua</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <ProjectGuid>{B919249F-3640-499B-BE0C-9DF839A612E7}</ProjectGuid>
   </PropertyGroup>
@@ -43,35 +43,27 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>BE_LUACORE_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BE_BELUA_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>BE_LUACORE_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BE_BELUA_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\context.hpp" />
     <ClInclude Include="include\lua_helpers.hpp" />
-    <ClInclude Include="include\id.hpp" />
-    <ClInclude Include="include\interpolate_string.hpp" />
-    <ClInclude Include="include\logging.hpp" />
-    <ClInclude Include="include\luacore_autolink.hpp" />
+    <ClInclude Include="include\belua_autolink.hpp" />
     <ClInclude Include="include\lua_exception.hpp" />
     <ClInclude Include="include\modules.hpp" />
     <ClInclude Include="include\open_module.hpp" />
-    <ClInclude Include="include\time.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\context.cpp" />
-    <ClCompile Include="src\id.cpp" />
-    <ClCompile Include="src\interpolate_string.cpp" />
-    <ClCompile Include="src\logging.cpp" />
     <ClCompile Include="src\lua_exception.cpp" />
     <ClCompile Include="src\lua_helpers.cpp" />
     <ClCompile Include="src\open_module.cpp" />
-    <ClCompile Include="src\time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

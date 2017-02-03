@@ -6,7 +6,7 @@
 #include <cassert>
 
 namespace be {
-namespace lua {
+namespace belua {
 
 ///////////////////////////////////////////////////////////////////////////////
 Context::Context() { }
@@ -84,5 +84,5 @@ void Context::close() {
    state_ = detail::LuaState();
 }
 
-} // be::lua
+} // be::belua
 } // be

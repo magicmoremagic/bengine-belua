@@ -1,14 +1,14 @@
 #pragma once
-#ifndef BE_LUACORE_LUA_HELPERS_HPP_
-#define BE_LUACORE_LUA_HELPERS_HPP_
+#ifndef BE_BELUALUA_HELPERS_HPP_
+#define BE_BELUALUA_HELPERS_HPP_
 
-#include "luacore_autolink.hpp"
+#include "belua_autolink.hpp"
 #include <be/core/be.hpp>
 #include <lua/lua.h>
 #include <lua/lauxlib.h>
 
 namespace be {
-namespace lua {
+namespace belua {
 
 void ecall(lua_State* L, int n_args, int n_results);
 
@@ -17,7 +17,7 @@ S raw_string(lua_State* L, int idx);
 S to_string(lua_State* L, int idx);
 S check_string(lua_State* L, int idx);
 
-} // be::lua
+} // be::belua
 } // be
 
 #endif

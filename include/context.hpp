@@ -1,6 +1,6 @@
 #pragma once
-#ifndef BE_LUACORE_CONTEXT_HPP_
-#define BE_LUACORE_CONTEXT_HPP_
+#ifndef BE_BELUA_CONTEXT_HPP_
+#define BE_BELUA_CONTEXT_HPP_
 
 #include "open_module.hpp"
 #include <be/core/logging.hpp>
@@ -10,7 +10,7 @@
 #include <lua/lualib.h>
 
 namespace be {
-namespace lua {
+namespace belua {
 namespace detail {
 
 struct LuaState final : Movable {
@@ -39,7 +39,7 @@ public:
    lua_State* L;
 };
 
-} // be::lua::detail
+} // be::belua::detail
 
 class Context final {
 public:
@@ -96,7 +96,7 @@ private:
    detail::LuaState state_;
 };
 
-} // be::lua
+} // be::belua
 } // be
 
 #endif

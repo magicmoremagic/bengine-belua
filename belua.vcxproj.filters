@@ -9,12 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Header Files\modules">
-      <UniqueIdentifier>{422a96a1-f54c-4e21-bd89-51dbfc4a1587}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\modules">
-      <UniqueIdentifier>{87c5dbf5-f3fb-4723-9db0-b9080f34e858}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\context.hpp">
@@ -23,29 +17,17 @@
     <ClInclude Include="include\open_module.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\id.hpp">
-      <Filter>Header Files\modules</Filter>
-    </ClInclude>
-    <ClInclude Include="include\logging.hpp">
-      <Filter>Header Files\modules</Filter>
-    </ClInclude>
     <ClInclude Include="include\modules.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\luacore_autolink.hpp">
+    <ClInclude Include="include\belua_autolink.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\lua_exception.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\interpolate_string.hpp">
-      <Filter>Header Files\modules</Filter>
-    </ClInclude>
     <ClInclude Include="include\lua_helpers.hpp">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\time.hpp">
-      <Filter>Header Files\modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -55,23 +37,11 @@
     <ClCompile Include="src\open_module.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\logging.cpp">
-      <Filter>Source Files\modules</Filter>
-    </ClCompile>
-    <ClCompile Include="src\id.cpp">
-      <Filter>Source Files\modules</Filter>
-    </ClCompile>
     <ClCompile Include="src\lua_exception.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\interpolate_string.cpp">
-      <Filter>Source Files\modules</Filter>
-    </ClCompile>
     <ClCompile Include="src\lua_helpers.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\time.cpp">
-      <Filter>Source Files\modules</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

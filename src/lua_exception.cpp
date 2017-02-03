@@ -3,7 +3,7 @@
 #include <gsl/string_span>
 
 namespace be {
-namespace lua {
+namespace belua {
 
 void lua_warn(const LuaError& e, Log& log, const char* source) {
    be::log_warn(source) << S(e.what())
@@ -35,6 +35,6 @@ void lua_error(const LuaException& e, Log& log, const char* source) {
       | log;
 }
 
-} // be::lua
+} // be::belua
 } // be
 

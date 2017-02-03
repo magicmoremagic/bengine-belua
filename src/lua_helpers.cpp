@@ -3,7 +3,7 @@
 #include <cassert>
 
 namespace be {
-namespace lua {
+namespace belua {
 namespace {
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ int trace(lua_State* L) {
    return 1;
 }
 
-} // be::lua::()
+} // be::belua::()
 
 ///////////////////////////////////////////////////////////////////////////////
 void ecall(lua_State* L, int n_args, int n_results) {
@@ -87,5 +87,5 @@ S check_string(lua_State* L, int idx) {
    return S(ptr, len);
 }
 
-} // be::lua
+} // be::belua
 } // be

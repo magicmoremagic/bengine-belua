@@ -1,6 +1,6 @@
-module 'luacore' {
+module 'belua' {
    lib {
-      define 'BE_LUACORE_IMPL',
+      define 'BE_BELUA_IMPL',
       link_project 'luaxx',
       link_project 'core'
    }

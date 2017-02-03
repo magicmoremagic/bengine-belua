@@ -3,7 +3,7 @@
 #include "lua_helpers.hpp"
 
 namespace be {
-namespace lua {
+namespace belua {
 namespace {
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -51,7 +51,7 @@ const char* get_parent_table(lua_State* L, const char* module) {
    return get_parent_table(L, i + 1);
 }
 
-} // be::lua::()
+} // be::belua::()
 
 ///////////////////////////////////////////////////////////////////////////////
 void open_module(lua_State* L, const luaL_Reg& module) {
@@ -101,5 +101,5 @@ void open_module(lua_State* L, const char* module_name, lua_CFunction module_ope
    }
 }
 
-} // be::lua
+} // be::belua
 } // be
