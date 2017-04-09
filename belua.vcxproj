@@ -58,6 +58,7 @@
     <ClInclude Include="include\lua_exception.hpp" />
     <ClInclude Include="include\modules.hpp" />
     <ClInclude Include="include\open_module.hpp" />
+    <ClInclude Include="include\version.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\context.cpp" />
