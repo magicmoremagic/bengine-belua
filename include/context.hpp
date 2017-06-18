@@ -9,8 +9,7 @@
 #include <gsl/string_span>
 #include <lua/lualib.h>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 namespace detail {
 
 struct LuaState final : Movable {
@@ -97,6 +96,5 @@ private:
 };
 
 } // be::belua
-} // be
 
 #endif

@@ -2,8 +2,7 @@
 #include "lua_exception.hpp"
 #include <cassert>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 namespace {
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -88,4 +87,3 @@ S check_string(lua_State* L, int idx) {
 }
 
 } // be::belua
-} // be

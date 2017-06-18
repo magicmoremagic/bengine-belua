@@ -7,13 +7,11 @@
 #include <lua/lua.h>
 #include <lua/lauxlib.h>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 
 void open_module(lua_State* L, const luaL_Reg& module);
 void open_module(lua_State* L, const char* module_name, lua_CFunction module_opener);
 
 } // be::belua
-} // be
 
 #endif

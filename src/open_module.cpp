@@ -2,8 +2,7 @@
 #include "context.hpp"
 #include "lua_helpers.hpp"
 
-namespace be {
-namespace belua {
+namespace be::belua {
 namespace {
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -102,4 +101,3 @@ void open_module(lua_State* L, const char* module_name, lua_CFunction module_ope
 }
 
 } // be::belua
-} // be

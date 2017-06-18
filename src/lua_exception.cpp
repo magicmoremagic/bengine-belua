@@ -2,8 +2,7 @@
 #include <be/core/logging.hpp>
 #include <gsl/string_span>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 
 void lua_warn(const LuaError& e, Log& log, const char* source) {
    be::log_warn(source) << S(e.what())
@@ -36,5 +35,3 @@ void lua_error(const LuaException& e, Log& log, const char* source) {
 }
 
 } // be::belua
-} // be
-

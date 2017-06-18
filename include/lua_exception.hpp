@@ -1,12 +1,11 @@
 #pragma once
-#ifndef BE_BELUALUA_EXCEPTION_HPP_
-#define BE_BELUALUA_EXCEPTION_HPP_
+#ifndef BE_BELUA_LUA_EXCEPTION_HPP_
+#define BE_BELUA_LUA_EXCEPTION_HPP_
 
 #include <be/core/exceptions.hpp>
 #include <be/core/log.hpp>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 
 class LuaException : public RecoverableException<int> {
 public:
@@ -31,6 +30,5 @@ void lua_error(const LuaError& error, Log& log, const char* source = "Lua");
 void lua_error(const LuaException& e, Log& log, const char* source = "Lua");
 
 } // be::belua
-} // be
 
 #endif

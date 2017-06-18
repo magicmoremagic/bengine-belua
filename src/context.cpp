@@ -5,8 +5,7 @@
 #include <be/core/logging.hpp>
 #include <cassert>
 
-namespace be {
-namespace belua {
+namespace be::belua {
 
 ///////////////////////////////////////////////////////////////////////////////
 Context::Context() { }
@@ -85,4 +84,3 @@ void Context::close() {
 }
 
 } // be::belua
-} // be
