@@ -1,6 +1,7 @@
 #include "context.hpp"
-#include "lua_exception.hpp"
+#include "log_error.hpp"
 #include "lua_helpers.hpp"
+#include "result_code.hpp"
 #include <be/core/exceptions.hpp>
 #include <be/core/logging.hpp>
 #include <cassert>
@@ -38,14 +39,14 @@ void Context::execute(gsl::cstring_span<> chunk, const S& chunk_name) {
    if (status == LUA_OK) {
       ecall(state_.L, 0, 0);
    } else if (status == LUA_ERRMEM) {
-      throw std::bad_alloc();
+      throw LuaTrace(result_code(status), S());
    } else {
       const char* temp = lua_tostring(state_.L, -1);
       S msg;
       if (temp != nullptr) {
          msg = temp;
       }
-      throw LuaError(status, msg, S());
+      throw LuaTrace(result_code(status), msg, S());
    }
 }
 
@@ -54,17 +55,17 @@ bool Context::attempt(gsl::cstring_span<> chunk, const S& chunk_name) {
    try {
       execute(chunk, chunk_name);
       return true;
+   } catch (const LuaTrace& e) {
+      log_error(e, default_log());
    } catch (const LuaError& e) {
-      lua_error(e, default_log());
-   } catch (const LuaException& e) {
-      lua_error(e, default_log());
-   } catch (const Recoverable<>& e) {
+      log_error(e, default_log());
+   } catch (const RecoverableTrace& e) {
       be::log_error("Lua") << "Exception while executing Lua!"
          & attr(ids::log_attr_message) << S(e.what())
          & attr(ids::log_attr_name) << chunk_name
          & attr(ids::log_attr_trace) << e.trace()
          | default_log();
-   } catch (const RecoverableException<>& e) {
+   } catch (const RecoverableError& e) {
       be::log_error("Lua") << "Exception while executing Lua!"
          & attr(ids::log_attr_message) << S(e.what())
          & attr(ids::log_attr_name) << chunk_name

@@ -1,0 +1,9 @@
+name	errc	value	msg
+ok		0	Execution completed without error
+yield		LUA_YIELD	Coroutine yielded
+syntax_error		LUA_ERRSYNTAX	Failed to compile chunk
+runtime_error		LUA_ERRRUN	Encountered unexpected error
+not_enough_memory	not_enough_memory	LUA_ERRMEM	Memory allocation failed
+handler_error		LUA_ERRERR	Encountered an error while running error handler
+gc_error		LUA_ERRGCMM	Encountered an error while running __gc metamethod
+file_io_error	io_error	LUA_ERRFILE	A problem occurred while accessing a file

@@ -53,17 +53,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\context.hpp" />
+    <ClInclude Include="include\log_error.hpp" />
     <ClInclude Include="include\lua_helpers.hpp" />
     <ClInclude Include="include\belua_autolink.hpp" />
-    <ClInclude Include="include\lua_exception.hpp" />
+    <ClInclude Include="include\lua_error.hpp" />
     <ClInclude Include="include\open_module.hpp" />
+    <ClInclude Include="include\result_code.hpp" />
     <ClInclude Include="include\version.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\context.cpp" />
-    <ClCompile Include="src\lua_exception.cpp" />
+    <ClCompile Include="src\log_error.cpp" />
+    <ClCompile Include="src\lua_error.cpp" />
     <ClCompile Include="src\lua_helpers.cpp" />
     <ClCompile Include="src\open_module.cpp" />
+    <ClCompile Include="src\result_code.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="meta\result_code.lua" />
+    <None Include="meta\result_code.tsv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

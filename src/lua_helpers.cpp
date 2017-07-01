@@ -1,5 +1,6 @@
 #include "lua_helpers.hpp"
-#include "lua_exception.hpp"
+#include "lua_error.hpp"
+#include "result_code.hpp"
 #include <cassert>
 
 namespace be::belua {
@@ -36,7 +37,7 @@ void ecall(lua_State* L, int n_args, int n_results) {
    if (status == LUA_OK) {
       return;
    } else if (status == LUA_ERRMEM) {
-      throw std::bad_alloc();
+      throw LuaTrace(result_code(status), "");
    } else {
       S msg;
       S lua_trace;
@@ -52,7 +53,7 @@ void ecall(lua_State* L, int n_args, int n_results) {
          msg = "Error calling Lua function!";
       }
 
-      throw LuaError(status, msg, lua_trace);
+      throw LuaTrace(result_code(status), msg, lua_trace);
    }
 }
 
