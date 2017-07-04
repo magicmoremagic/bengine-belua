@@ -53,7 +53,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\context.hpp" />
-    <ClInclude Include="include\log_error.hpp" />
+    <ClInclude Include="include\log_exception.hpp" />
     <ClInclude Include="include\lua_helpers.hpp" />
     <ClInclude Include="include\belua_autolink.hpp" />
     <ClInclude Include="include\lua_error.hpp" />
@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\context.cpp" />
-    <ClCompile Include="src\log_error.cpp" />
+    <ClCompile Include="src\log_exception.cpp" />
     <ClCompile Include="src\lua_error.cpp" />
     <ClCompile Include="src\lua_helpers.cpp" />
     <ClCompile Include="src\open_module.cpp" />

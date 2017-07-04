@@ -35,7 +35,7 @@
     <ClInclude Include="include\lua_error.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\log_error.hpp">
+    <ClInclude Include="include\log_exception.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -55,7 +55,7 @@
     <ClCompile Include="src\lua_error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\log_error.cpp">
+    <ClCompile Include="src\log_exception.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

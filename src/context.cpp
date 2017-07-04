@@ -1,8 +1,8 @@
 #include "context.hpp"
-#include "log_error.hpp"
+#include "log_exception.hpp"
 #include "lua_helpers.hpp"
 #include "result_code.hpp"
-#include <be/core/exceptions.hpp>
+#include <be/core/log_exception.hpp>
 #include <be/core/logging.hpp>
 #include <cassert>
 
@@ -56,25 +56,17 @@ bool Context::attempt(gsl::cstring_span<> chunk, const S& chunk_name) {
       execute(chunk, chunk_name);
       return true;
    } catch (const LuaTrace& e) {
-      log_error(e, default_log());
+      log_exception(e, default_log());
    } catch (const LuaError& e) {
-      log_error(e, default_log());
+      log_exception(e, default_log());
    } catch (const RecoverableTrace& e) {
-      be::log_error("Lua") << "Exception while executing Lua!"
-         & attr(ids::log_attr_message) << S(e.what())
-         & attr(ids::log_attr_name) << chunk_name
-         & attr(ids::log_attr_trace) << e.trace()
-         | default_log();
-   } catch (const RecoverableError& e) {
-      be::log_error("Lua") << "Exception while executing Lua!"
-         & attr(ids::log_attr_message) << S(e.what())
-         & attr(ids::log_attr_name) << chunk_name
-         | default_log();
+      log_exception(e, default_log());
+   } catch (const fs::filesystem_error& e) {
+      log_exception(e, default_log());
+   } catch (const std::system_error& e) {
+      log_exception(e, default_log());
    } catch (const std::exception& e) {
-      be::log_error("Lua") << "Unknown exception while executing Lua!"
-         & attr(ids::log_attr_message) << S(e.what())
-         & attr(ids::log_attr_name) << chunk_name
-         | default_log();
+      log_exception(e, default_log());
    }
    return false;
 }
