@@ -77,7 +77,7 @@ public:
          open_module(new_state.L, *module_begin);
          ++module_begin;
       }
-         
+
       lua_gc(new_state.L, LUA_GCRESTART, 0); // start collector again
 
       state_ = std::move(new_state);

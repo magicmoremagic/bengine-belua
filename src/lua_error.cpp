@@ -18,7 +18,7 @@ LuaError::LuaError(std::error_code ec, const S& msg, S lua_trace)
      lua_trace_(std::move(lua_trace)) { }
 
 ///////////////////////////////////////////////////////////////////////////////
-LuaError::LuaError(LuaError&& other) noexcept 
+LuaError::LuaError(LuaError&& other) noexcept
    : RecoverableError(other.code(), other.what()),
      lua_trace_(std::move(other.lua_trace_)) { }
 
