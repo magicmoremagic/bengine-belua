@@ -56,17 +56,17 @@ bool Context::attempt(gsl::cstring_span<> chunk, const S& chunk_name) {
       execute(chunk, chunk_name);
       return true;
    } catch (const LuaTrace& e) {
-      log_exception(e, default_log());
+      log_exception(e);
    } catch (const LuaError& e) {
-      log_exception(e, default_log());
+      log_exception(e);
    } catch (const RecoverableTrace& e) {
-      log_exception(e, default_log());
+      be::log_exception(e);
    } catch (const fs::filesystem_error& e) {
-      log_exception(e, default_log());
+      be::log_exception(e);
    } catch (const std::system_error& e) {
-      log_exception(e, default_log());
+      be::log_exception(e);
    } catch (const std::exception& e) {
-      log_exception(e, default_log());
+      be::log_exception(e);
    }
    return false;
 }

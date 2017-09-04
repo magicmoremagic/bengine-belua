@@ -5,7 +5,7 @@
 namespace be::belua {
 
 ///////////////////////////////////////////////////////////////////////////////
-void log_exception(const LuaTrace& e, Log& log, v::Verbosity verbosity, const char* source) {
+void log_exception(const LuaTrace& e, v::Verbosity verbosity, Log& log, const char* source) {
    be_log(verbosity, source) << S(e.what())
       & attr(ids::log_attr_category) << e.code().category().name()
       & attr(ids::log_attr_error) << result_code(e.code().value())
@@ -17,7 +17,7 @@ void log_exception(const LuaTrace& e, Log& log, v::Verbosity verbosity, const ch
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void log_exception(const LuaError& e, Log& log, v::Verbosity verbosity, const char* source) {
+void log_exception(const LuaError& e, v::Verbosity verbosity, Log& log, const char* source) {
    be_log(verbosity, source) << S(e.what())
       & attr(ids::log_attr_category) << e.code().category().name()
       & attr(ids::log_attr_error) << result_code(e.code().value())
