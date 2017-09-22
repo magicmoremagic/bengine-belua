@@ -55,7 +55,6 @@
     <ClInclude Include="include\context.hpp" />
     <ClInclude Include="include\log_exception.hpp" />
     <ClInclude Include="include\lua_helpers.hpp" />
-    <ClInclude Include="include\belua_autolink.hpp" />
     <ClInclude Include="include\lua_error.hpp" />
     <ClInclude Include="include\open_module.hpp" />
     <ClInclude Include="include\result_code.hpp" />

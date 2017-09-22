@@ -2,7 +2,6 @@
 #ifndef BE_BELUA_OPEN_MODULE_HPP_
 #define BE_BELUA_OPEN_MODULE_HPP_
 
-#include "belua_autolink.hpp"
 #include <be/core/be.hpp>
 #include <lua/lua.h>
 #include <lua/lauxlib.h>

@@ -20,9 +20,6 @@
     <ClInclude Include="include\open_module.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\belua_autolink.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\lua_helpers.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

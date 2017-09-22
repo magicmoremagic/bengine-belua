@@ -2,7 +2,6 @@
 #ifndef BE_BELUA_RESULT_CODE_HPP_
 #define BE_BELUA_RESULT_CODE_HPP_
 
-#include "belua_autolink.hpp"
 #include <lua/lua.h>
 #include <lua/lauxlib.h>
 #include <be/core/enum_traits.hpp>
