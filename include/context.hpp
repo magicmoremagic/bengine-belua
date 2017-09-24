@@ -86,8 +86,8 @@ public:
    lua_State* L();
    explicit operator bool() const;
 
-   void execute(gsl::cstring_span<> chunk, const S& chunk_name = "Lua");
-   bool attempt(gsl::cstring_span<> chunk, const S& chunk_name = "Lua");
+   void execute(SV chunk, const S& chunk_name = "Lua");
+   bool attempt(SV chunk, const S& chunk_name = "Lua");
 
    void close();
 

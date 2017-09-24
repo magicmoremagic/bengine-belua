@@ -33,7 +33,7 @@ Context::operator bool() const {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void Context::execute(gsl::cstring_span<> chunk, const S& chunk_name) {
+void Context::execute(SV chunk, const S& chunk_name) {
    lua_settop(state_.L, 0);
    int status = luaL_loadbufferx(state_.L, chunk.data(), chunk.length(), chunk_name.c_str(), nullptr);
    if (status == LUA_OK) {
@@ -51,7 +51,7 @@ void Context::execute(gsl::cstring_span<> chunk, const S& chunk_name) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-bool Context::attempt(gsl::cstring_span<> chunk, const S& chunk_name) {
+bool Context::attempt(SV chunk, const S& chunk_name) {
    try {
       execute(chunk, chunk_name);
       return true;
